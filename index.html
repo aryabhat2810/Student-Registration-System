@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Student Registration System</h1>
+            <p>Register and manage student information</p>
+        </div>
+        <span class="topbar-tag">Web Technology Practical 2</span>
+    </header>
+
+    <main class="container">
+        <section class="panel form-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Student Registration</h2>
+                    <p>Enter the student details below.</p>
+                </div>
+            </div>
+
+            <form id="studentForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="studentName">Full Name <span>*</span></label>
+                        <input type="text" id="studentName" placeholder="e.g. Arya Bhat">
+                        <small class="error" id="studentNameError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prn">PRN / Roll Number <span>*</span></label>
+                        <input type="text" id="prn" placeholder="Enter PRN (7–12 digits)">
+                        <small class="error" id="prnError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span>*</span></label>
+                        <input type="email" id="email" placeholder="student@example.com">
+                        <small class="error" id="emailError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number <span>*</span></label>
+                        <input type="tel" id="mobile" placeholder="10-digit mobile number">
+                        <small class="error" id="mobileError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department <span>*</span></label>
+                        <select id="department">
+                            <option value="">Select department</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Electronics and Telecommunication">Electronics and Telecommunication</option>
+                        </select>
+                        <small class="error" id="departmentError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester <span>*</span></label>
+                        <select id="semester">
+                            <option value="">Select semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select>
+                        <small class="error" id="semesterError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age <span>*</span></label>
+                        <input type="number" id="age" placeholder="Enter age" min="16" max="60">
+                        <small class="error" id="ageError"></small>
+                    </div>
+                </div>
+
+                <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register Student</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel records-panel">
+            <div class="records-heading">
+                <div>
+                    <h2>Registered Students</h2>
+                    <p>Student records saved in this browser.</p>
+                </div>
+                <div class="count-box">
+                    <strong id="studentCount">0</strong>
+                    <span>Students</span>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Name</th>
+                            <th>PRN</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Student records are added here using JavaScript. -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="emptyMessage" class="empty-message">No student records found. Register a student to get started.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Registration System | Web Technology Practical No. 2</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
